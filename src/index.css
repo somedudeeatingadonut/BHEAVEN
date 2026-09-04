@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --poe-bg: #0c0d10;
+    --poe-panel: #14171d;
+    --poe-border: #2e3846;
+    --poe-gold: #af9457;
+    --poe-gold-bright: #e3c57a;
+    --poe-magic: #8888ff;
+    --poe-rare: #ffff77;
+    --poe-unique: #af6025;
+    --poe-currency: #aa9e82;
+    --poe-gem: #1ba29b;
+    --poe-life: #c51d24;
+    --poe-mana: #2457c5;
+    --poe-es: #00d2ff;
+  }
+
+  body {
+    background-color: #08090b;
+    color: #e4e4e7;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    user-select: none;
+    overflow: hidden;
+  }
+
+  h1, h2, h3, h4, .font-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+
+  .font-mono {
+    font-family: 'Fira Code', monospace;
+  }
+}
+
+/* Custom scrollbars for inventory / panels */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 17, 23, 0.8);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(90, 105, 125, 0.5);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 160, 190, 0.8);
+}
+
+/* Animation utilities */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-float {
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { filter: drop-shadow(0 0 5px rgba(227, 197, 122, 0.4)); }
+  50% { filter: drop-shadow(0 0 15px rgba(227, 197, 122, 0.8)); }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
